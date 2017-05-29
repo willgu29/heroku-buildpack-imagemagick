@@ -15,13 +15,35 @@ cd $BUILD_DIR
 mkdir -p $VENDOR_DIR
 cd $VENDOR_DIR
 curl -L --silent $DOWNLOAD_URL | tar xvz
+cd $VENDOR_DIR/ImageMagick-7.0.5-9
+./configure
+make
+make install
 
+sudo ldconfig /usr/local/lib
 
 echo "-----> Writing policy file"
 
 mkdir -p $HOME/vendor/ImageMagick-7.0.5-9/config/
 
 cat > $HOME/vendor/ImageMagick-7.0.5-9/config/policy.xml <<EOF
+<policymap>
+
+  <policy domain="coder" rights="none" pattern="EPHEMERAL" />
+  <policy domain="coder" rights="read" pattern="HTTPS" />
+  <policy domain="coder" rights="read" pattern="HTTP" />
+  <policy domain="coder" rights="none" pattern="URL" />
+  <policy domain="coder" rights="none" pattern="FTP" />
+  <policy domain="coder" rights="none" pattern="MVG" />
+  <policy domain="coder" rights="none" pattern="MSL" />
+  <policy domain="coder" rights="none" pattern="TEXT" />
+  <!-- policy domain="coder" rights="read | write" pattern="LABEL" / -->
+  <!-- policy domain="path" rights="none" pattern="@*" / -->
+</policymap>
+EOF
+
+mkdir -p $HOME/vendor/ImageMagick-7.0.5-9/www/source/
+cat > $HOME/vendor/ImageMagick-7.0.5-9/www/source/policy.xml <<EOF
 <policymap>
 
   <policy domain="coder" rights="none" pattern="EPHEMERAL" />
