@@ -10,7 +10,7 @@ echo "DOWNLOAD_URL = " $DOWNLOAD_URL | indent
 cd $BUILD_DIR
 mkdir -p $VENDOR_DIR
 cd $VENDOR_DIR
-curl -L --silent $DOWNLOAD_URL | tar xvzf
+curl -L --silent $DOWNLOAD_URL | tar xvz
 
 echo "exporting PATH" | indent
 PROFILE_PATH="$BUILD_DIR/.profile.d/imagemagick.sh"
