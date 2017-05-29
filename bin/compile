@@ -29,10 +29,9 @@ echo 'export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/vendor/ImageMagick-7.0.5/li
 # echo 'export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/vendor/ImageMagick-6.9.2/lib"' >> $PROFILE_PATH
 echo "-----> Writing policy file"
 mkdir -p $HOME/vendor/ImageMagick-7.0.5/bin/etc/ImageMagick
-cat > $HOME/vendor/ImageMagick-7.0.5/bin/policy.xml <<EOF
+cat > $HOME/vendor/ImageMagick-7.0.5/bin/etc/ImageMagick/policy.xml <<EOF
 <policymap>
   <policy domain="coder" rights="none" pattern="EPHEMERAL" />
-  <policy domain="coder" rights="none" pattern="HTTPS" />
   <policy domain="coder" rights="none" pattern="MVG" />
   <policy domain="coder" rights="none" pattern="MSL" />
 </policymap>
