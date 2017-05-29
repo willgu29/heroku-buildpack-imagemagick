@@ -32,8 +32,8 @@ cat > $HOME/vendor/ImageMagick-7.0.5-9/config/policy.xml <<EOF
   <policy domain="coder" rights="none" pattern="MVG" />
   <policy domain="coder" rights="none" pattern="MSL" />
   <policy domain="coder" rights="none" pattern="TEXT" />
-  <!--policy domain="coder" rights="read | write" pattern="LABEL" /-->
-  <policy domain="path" rights="none" pattern="@*" />
+  <!-- policy domain="coder" rights="read | write" pattern="LABEL" / -->
+  <!-- policy domain="path" rights="none" pattern="@*" / -->
 </policymap>
 EOF
 
