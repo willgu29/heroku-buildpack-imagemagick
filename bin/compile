@@ -1,5 +1,9 @@
 #!/bin/bash
 
+indent() {
+  sed -u 's/^/       /'
+}
+
 echo "-----> Install ImageMagick"
 BUILD_DIR=$1
 VENDOR_DIR="vendor"
