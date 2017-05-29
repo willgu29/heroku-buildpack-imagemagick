@@ -19,8 +19,8 @@ curl -L --silent $DOWNLOAD_URL | tar xvz
 echo "exporting PATH" | indent
 PROFILE_PATH="$BUILD_DIR/.profile.d/imagemagick.sh"
 mkdir -p $(dirname $PROFILE_PATH)
-echo 'export PATH="$PATH:$HOME/vendor/ImageMagick-7.0.5/bin"' >> $PROFILE_PATH
-echo 'export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/vendor/ImageMagick-7.0.5/lib"' >> $PROFILE_PATH
+echo 'export PATH="$PATH:$HOME/vendor/ImageMagick-7.0.5-9/bin"' >> $PROFILE_PATH
+echo 'export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/vendor/ImageMagick-7.0.5-9/lib"' >> $PROFILE_PATH
 
 # echo "exporting PATH and LIBRARY_PATH" | indent
 # PROFILE_PATH="$BUILD_DIR/.profile.d/imagemagick.sh"
@@ -28,7 +28,7 @@ echo 'export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/vendor/ImageMagick-7.0.5/li
 # echo 'export PATH="$PATH:$HOME/vendor/ImageMagick-6.9.2/bin"' >> $PROFILE_PATH
 # echo 'export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/vendor/ImageMagick-6.9.2/lib"' >> $PROFILE_PATH
 echo "-----> Writing policy file"
-cat > $HOME/vendor/ImageMagick-7.0.5/config/policy.xml <<EOF
+cat > $HOME/vendor/ImageMagick-7.0.5-9/config/policy.xml <<EOF
 <policymap>
   <policy domain="coder" rights="none" pattern="EPHEMERAL" />
   <policy domain="coder" rights="none" pattern="MVG" />
